@@ -29,6 +29,11 @@ public class GuiTester {
         });
     }
 
+    public static void test(String lookAndFeel, Function<JFrame, JComponent> panelSupplier) {
+        test(panelSupplier, lookAndFeel, f -> {
+        });
+    }
+
     public static void test(Function<JFrame, JComponent> panelSupplier, String lookAndFeel, Consumer<JFrame> frameConsumer) {
         EventQueue.invokeLater(() -> testPrivate(panelSupplier, lookAndFeel, frameConsumer));
 
